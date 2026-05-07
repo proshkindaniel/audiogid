@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Камчатский краб</title>
+  <style>
+    body { font-family: sans-serif; background: #0a1628; color: white; padding: 30px 20px; max-width: 600px; margin: 0 auto; }
+    h1 { color: #4fc3f7; font-size: 1.8em; }
+    .player { background: #1a2a3a; border-radius: 16px; padding: 24px; margin: 20px 0; text-align: center; }
+    .play-btn { background: #4fc3f7; color: #0a1628; border: none; border-radius: 50%; width: 70px; height: 70px; font-size: 2em; cursor: pointer; }
+    p { line-height: 1.7; color: #b0bec5; }
+    .back { color: #4fc3f7; text-decoration: none; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back">← Назад</a>
+  <h1>🦀 Камчатский краб</h1>
+  <div class="player">
+    <button class="play-btn" onclick="toggleAudio()">▶</button>
+    <p id="status">Нажми чтобы слушать</p>
+    <audio id="audio" src="audio/krab.mp3"></audio>
+  </div>
+  <p>Камчатский краб — один из крупнейших крабов в мире. Размах его клешней достигает 1,5 метра, а вес — до 7 килограммов. Несмотря на название, он не настоящий краб, а ближайший родственник краба-отшельника.</p>
+  <p>Живёт на глубине до 200 метров в холодных водах Тихого океана. Самки откладывают до 400 тысяч яиц за раз.</p>
+  <script>
+    function toggleAudio() {
+      const audio = document.getElementById('audio');
+      const btn = document.querySelector('.play-btn');
+      const status = document.getElementById('status');
+      if (audio.paused) { audio.play(); btn.textContent = '⏸'; status.textContent = 'Воспроизведение...'; }
+      else { audio.pause(); btn.textContent = '▶'; status.textContent = 'Нажми чтобы слушать'; }
+    }
+  </script>
+</body>
+</html>
